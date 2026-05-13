@@ -1,0 +1,27 @@
+#include <Servo.h>
+
+Servo s1, s2, s3, s4;
+
+const int BUTTON_PIN = 13;
+
+void setup() {
+  s1.attach(3);
+  s2.attach(7);
+  s3.attach(8);
+  s4.attach(10);
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+  // hands open
+  s1.write(0); s2.write(0); s3.write(0); s4.write(0);
+}
+
+void loop() {
+  if (digitalRead(BUTTON_PIN) == LOW) {
+    // hands close
+    s1.write(170); s2.write(175); s3.write(180); s4.write(170);
+  } else {
+    // hands open
+    s1.write(0); s2.write(0); s3.write(0); s4.write(0);
+  }
+}
