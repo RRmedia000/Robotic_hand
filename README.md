@@ -42,37 +42,6 @@ A single button on pin 13 triggers the whole hand to close. Releasing the button
 
 ---
 
-## Code
-
-```cpp
-#include <Servo.h>
-
-Servo s1, s2, s3, s4;
-
-const int BUTTON_PIN = 13;
-
-void setup() {
-  s1.attach(3);
-  s2.attach(7);
-  s3.attach(8);
-  s4.attach(10);
-
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-
-  // start open
-  s1.write(0); s2.write(0); s3.write(0); s4.write(0);
-}
-
-void loop() {
-  if (digitalRead(BUTTON_PIN) == LOW) {
-    // close hand
-    s1.write(90); s2.write(90); s3.write(90); s4.write(90);
-  } else {
-    // open hand
-    s1.write(0); s2.write(0); s3.write(0); s4.write(0);
-  }
-}
-```
 
 > If 90° doesn't fully close the fingers, increase the angle — servos typically go up to 180°. Tune each servo individually if the fingers close unevenly.
 
