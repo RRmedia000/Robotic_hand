@@ -33,7 +33,8 @@ A single button on pin 13 triggers the whole hand to close. Releasing the button
 | Tendon (return) | Elastic on back of hand |
 
 ---
-
+##3D Print
+Export hand5.3mf **without** supports!!
 ## Wiring
 
 - **Servos** — signal wires to pins 3, 7, 8, 10. Power (red) to 5V rail, ground (brown/black) to GND rail on breadboard.
